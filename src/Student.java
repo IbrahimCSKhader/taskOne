@@ -26,9 +26,8 @@ public class Student extends Person implements Printable {
     public double calculateAverage() {
         double avg = 0;
        avg= grades.isEmpty()? 0 :grades.stream()
-                .mapToInt(Integer::intValue)
-                .average()
-                .orElse(0.0);
+               .mapToInt(Integer::intValue)
+               .average().getAsDouble();
 
         return avg;
     }
